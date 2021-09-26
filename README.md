@@ -16,6 +16,7 @@ docker-compose up
 
 ### Launch the webpage
 http://localhost:3003/admin
+
 The user is 'appuser'.
 
 The password is 'password'. (highly guessable)
