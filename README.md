@@ -24,7 +24,7 @@ The password is 'password'. (highly guessable)
 ### To access the db container:
 'docker-compose ps' to get the name.
 
-'docker exec -it "<name>" sh'
+'docker exec -it insert-name sh'
 
 ### To access the database:
 'psql -U appuser test-db'
