@@ -1,0 +1,33 @@
+version: "3"
+
+services:
+  app:
+    build:
+      context: .
+    ports:
+      - "3003:3003"
+    volumes:
+      - ./app/app:/app
+    command: >
+      sh -c "python manage.py migrate && python manage.py runserver 0.0.0.0:3003"
+    environment:
+      - DB_HOST=db
+      - DB_NAME=test-db
+      - DB_USER=appuser
+      - DB_PASS=password
+    depends_on:
+      - db
+  db:
+    restart: always
+    image: postgres:13.1
+    environment:
+      - POSTGRES_DB=test-db
+      - POSTGRES_USER=appuser
+      - POSTGRES_PASSWORD=password
+    ports:
+      - "5432:5432"
+    volumes:
+    - pgdata-pv:/var/lib/postgresql/data
+volumes:
+  pgdata-pv:
+
