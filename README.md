@@ -1,7 +1,7 @@
 # django_postgres
 
 ### Run from the project directory
-docker-compose run --rm app django-admin startproject app
+docker-compose run --rm app django-admin startproject app (This will create an 'app' directory and populate it.)
 docker-compose build
 
 ### Initial db migration
